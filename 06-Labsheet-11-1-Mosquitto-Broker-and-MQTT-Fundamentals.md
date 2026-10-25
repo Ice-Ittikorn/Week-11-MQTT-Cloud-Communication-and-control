@@ -235,12 +235,15 @@ mosquitto version 2.1.2 terminating
 * *หมายเหตุ* การรันโปรแกรมทั้ง subscriber และ publisher จะทำให้หน้าต่างค้างและรอแสดงข้อความที่ publisher ส่งมาให้ ดังนั้นการเปลี่ยนคำสั่ง ต้องกด  `Ctrl+C`  ทุกครั้งเพื่อออกจาก  โปรแกรม subscriber ก่อนเสมอ แล้วเปลี่ยนคำสั่ง subscriber ใหม่ จากนั้นจึงรันคำสั่ง publisher ใหม่
 * *สังเกต Log ฝั่ง Broker*  มีเพียงแพ็กเก็ต `PUBLISH` ส่งผ่านไปโดยไม่มีแพ็กเก็ตตอบรับใดๆ
 
+<img width="1512" height="982" alt="1" src="https://github.com/user-attachments/assets/f56029d7-1bd4-470e-ac46-61d9df8ba92b" />
 
 
 #### 2. ทดสอบ QoS 1 (At Least Once)
 * ในเทอร์มินัลที่ 2 (Subscriber)  `& "C:\Program Files\mosquitto\mosquitto_sub.exe" -h 127.0.0.1 -t "test/qos" -q 1 -v`
 * ในเทอร์มินัลที่ 3 (Publisher)  `& "C:\Program Files\mosquitto\mosquitto_pub.exe" -h 127.0.0.1 -t "test/qos" -m "QoS 1 Message" -q 1`
 * *สังเกต Log ฝั่ง Broker*  จะปรากฏแพ็กเก็ต `PUBLISH (d0, q1, m1, ...)` ตามด้วยแพ็กเก็ต `PUBACK (Mid: 1)` เพื่อยืนยันการรับส่งข้อมูล
+
+<img width="1512" height="982" alt="2" src="https://github.com/user-attachments/assets/dbce67cb-d842-462e-80a2-6875f9673248" />
 
 #### 3. ทดสอบ QoS 2 (Exactly Once)
 * ในเทอร์มินัลที่ 2 (Subscriber)  `& mosquitto_sub.exe -h 127.0.0.1 -t "test/qos" -q 2 -v`
@@ -250,6 +253,8 @@ mosquitto version 2.1.2 terminating
   2. `Sending PUBREC`
   3. `Received PUBREL`
   4. `Sending PUBCOMP`
+
+<img width="1512" height="982" alt="3" src="https://github.com/user-attachments/assets/66e53858-e668-4d17-b5cb-932a4a6276bf" />
 
 ---
 
