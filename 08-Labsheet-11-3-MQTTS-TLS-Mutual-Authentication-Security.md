@@ -327,9 +327,14 @@ void app_main(void)
    * บอร์ดเชื่อมต่อ Wi-Fi สำเร็จ
    * เริ่มกระบวนการจับมือ TLS `Connecting to 192.168.1.100:8883...`
    * หน้าจอรายงาน `MQTTS TLS Handshake Successful! Connected to Secure Broker.`
+
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 01 22 15" src="https://github.com/user-attachments/assets/20d1fb81-da7c-4f07-a4e4-ea8df82ba03b" />
+
 3. สังเกตหน้าต่าง Broker Log
    * Mosquitto จะพิมพ์ข้อความยืนยัน `Peer certificate verified: /C=TH/ST=Bangkok/O=IoT Node/CN=esp32-secure-node`
    * แสดงว่า Broker ได้ทำการตรวจความถูกต้องของใบรับรองบอร์ด ESP32 ผ่านเรียบร้อยแล้ว
+
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 01 22 21" src="https://github.com/user-attachments/assets/a35a2889-e319-4a8e-9364-925167171364" />
 
 ---
 
