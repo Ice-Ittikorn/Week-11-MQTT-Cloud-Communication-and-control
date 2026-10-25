@@ -386,6 +386,8 @@ iot/node01/telemetry {"node_id":"esp32-node01","adc_raw":1786,"voltage_v":1.439,
 ```
 *ทดลองหมุนก้านของ Potentiometer*: สังเกตว่าค่า `adc_raw` และ `voltage_v` เปลี่ยนแปลงตามการหมุนอย่างถูกต้อง
 
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 00 33 40" src="https://github.com/user-attachments/assets/cc86c476-4e71-4227-9d99-0da52d243f4c" />
+
 ---
 
 ### 2. การส่งคำสั่งเปิด-ปิดหลอดไฟ LED
