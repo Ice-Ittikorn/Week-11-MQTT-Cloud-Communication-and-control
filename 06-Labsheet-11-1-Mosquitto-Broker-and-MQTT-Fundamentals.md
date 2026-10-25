@@ -190,12 +190,6 @@ mosquitto version 2.1.2 terminating
 > [!NOTE]
 > บันทึกผลการทดลอง สังเกตว่าข้อความใดบ้างที่ปรากฏในเทอร์มินัลที่ 2 และข้อความใดที่ไม่ปรากฏ พร้อมอธิบายเหตุผลว่าทำไม `home/bedroom/balcony/light` จึงไม่แสดงผล
 
-#### 3. การทดสอบไวลด์การ์ดหลายระดับ (Multi-Level Wildcard: `#`)
-ใน **เทอร์มินัลที่ 2 (Subscriber)** กด `Ctrl + C` เพื่อออกจากโปรแกรม subscriber แล้วเปลี่ยนคำสั่ง Subscribe เป็น
-```powershell
-& mosquitto_sub.exe -h 127.0.0.1 -p 1883 -t "home/#" -v
-```
-
 <img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 49 00" src="https://github.com/user-attachments/assets/5f71c09f-10fe-4d3d-a094-7ab9b19f0435" />
 
 ```
@@ -211,6 +205,14 @@ mosquitto version 2.1.2 terminating
 สัญลักษณ์ + แทนได้เพียง 1 ระดับของ Topic เท่านั้น ดังนั้น home/+/light จึงตรงกับ home/livingroom/light และ home/kitchen/light (ระดับกลางมี 1 ระดับ) แต่ home/bedroom/balcony/light มีระดับกลาง 2 ระดับ(bedroom/balcony) จึงไม่ตรงกับรูปแบบ Broker จึงไม่ส่งข้อความนี้ให้ Subscriber
 ```
 
+
+#### 3. การทดสอบไวลด์การ์ดหลายระดับ (Multi-Level Wildcard: `#`)
+ใน **เทอร์มินัลที่ 2 (Subscriber)** กด `Ctrl + C` เพื่อออกจากโปรแกรม subscriber แล้วเปลี่ยนคำสั่ง Subscribe เป็น
+```powershell
+& mosquitto_sub.exe -h 127.0.0.1 -p 1883 -t "home/#" -v
+```
+
+
 ใน **เทอร์มินัลที่ 3 (Publisher)** ทดลอง Publish ข้อความไปยังหัวข้อต่างๆ
 ```powershell
 & mosquitto_pub.exe -h 127.0.0.1 -p 1883 -t "home/livingroom/temp" -m "26.4"
@@ -218,6 +220,8 @@ mosquitto version 2.1.2 terminating
 ```
 
 *สังเกตผล* ทุกข้อความที่ขึ้นต้นด้วย `home/` จะถูกส่งมาแสดงผลทั้งหมด
+
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 52 46" src="https://github.com/user-attachments/assets/84312163-c024-4084-93e9-42a596d4cb93" />
 
 ---
 
