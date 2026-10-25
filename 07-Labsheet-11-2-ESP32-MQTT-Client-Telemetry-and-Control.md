@@ -399,11 +399,20 @@ mosquitto_pub -h 192.168.1.111 -p 1883 -t "iot/node01/cmd/led" -m "ON" -q 1
 ```
 *สังเกตผล*: หลอดไฟ LED บนบอร์ดจะติดสว่างทันที และในรอบ Telemetry ถัดไป ค่า `"led_state"` จะเปลี่ยนเป็น `true`
 
+<img width="1512" height="949" alt="1" src="https://github.com/user-attachments/assets/0e884387-b271-406b-8bc4-43f4a050a2bb" />
+
+<img width="543" height="633" alt="image" src="https://github.com/user-attachments/assets/135f71b8-632c-494c-9e40-4eb079408749" />
+
+
 * **คำสั่งปิดไฟ**
 ```powershell
 mosquitto_pub -h 192.168.1.111 -p 1883 -t "iot/node01/cmd/led" -m "OFF" -q 1
 ```
 *สังเกตผล*: หลอดไฟ LED จะดับลงทันที และค่า `"led_state"` ใน Telemetry จะเปลี่ยนกลับเป็น `false`
+
+<img width="1512" height="982" alt="2" src="https://github.com/user-attachments/assets/cdf21d28-154d-44c8-b6d5-6c998f8b5ca3" />
+
+<img width="529" height="652" alt="image" src="https://github.com/user-attachments/assets/79ca8f32-5e20-48c1-ba14-ba426ee94b64" />
 
 * **คำสั่งแบบ JSON Payload**
 ```powershell
