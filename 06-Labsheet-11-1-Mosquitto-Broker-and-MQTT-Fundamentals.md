@@ -321,6 +321,8 @@ mosquitto version 2.1.2 terminating
    ```
    มายังเทอร์มินัลที่ 2 โดยอัตโนมัติ
 
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 00 06 12" src="https://github.com/user-attachments/assets/929aa3bf-2c67-42cd-94cf-76749ef4bd86" />
+
 ---
 
 ## 4. การบันทึกและวิเคราะห์ผลการทดลอง
