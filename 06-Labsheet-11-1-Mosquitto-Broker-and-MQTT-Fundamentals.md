@@ -272,17 +272,23 @@ mosquitto version 2.1.2 terminating
    ```
    *ผลที่ได้*  หน้าจอว่างเปล่า ไม่ได้รับข้อความใดๆ เพราะข้อความถูกส่งผ่านไปแล้วก่อนหน้านี้
 
+<img width="1512" height="982" alt="3" src="https://github.com/user-attachments/assets/f3f1eb78-9424-4c45-a19e-c2ece97dcfb6" />
+
 4. ใน **เทอร์มินัลที่ 3 (Publisher)** สั่ง Publish โดยเพิ่มพารามิเตอร์ **`-r` (Retain)**
    ```powershell
    & mosquitto_pub.exe -h 127.0.0.1 -p 1883 -t "sensor/state" -m "CRITICAL_ALERT" -r
    ```
    *ผลที่ได้* ในเทอร์มินัลที่ 2 (Subscriber)ได้รับข้อความ `sensor/state CRITICAL_ALERT` ทันที
 
+<img width="1512" height="982" alt="4" src="https://github.com/user-attachments/assets/ee0b3bdf-ab10-461b-84e8-180858822631" />
+
 5. ปิดเทอร์มินัลที่ 2 (Subscriber) (`Ctrl + C`) แล้วรัน subscriber ใหม่อีกครั้ง
    ```powershell
    & mosquitto_sub.exe -h 127.0.0.1 -p 1883 -t "sensor/state" -v
    ```
    *ผลที่ได้* ทันทีที่เชื่อมต่อสำเร็จ เทอร์มินัลที่ 2 (Subscriber) จะได้รับข้อความ `CRITICAL_ALERT` ในทันที แม้ Publisher จะไม่ได้ส่งข้อความใหม่เลยก็ตาม
+
+<img width="1512" height="982" alt="5" src="https://github.com/user-attachments/assets/ee3028e7-165d-4cf5-af7b-b12e5a76f163" />
 
 > [!TIP]
 > **วิธีลบ Retained Message ออกจาก Broker**  ส่งข้อความที่มีเนื้อหาว่างเปล่า (Empty Payload) พร้อมเปิดแฟล็ก `-r`
