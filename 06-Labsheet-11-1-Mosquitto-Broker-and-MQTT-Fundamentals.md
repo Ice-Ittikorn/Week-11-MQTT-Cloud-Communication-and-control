@@ -172,6 +172,8 @@ mosquitto version 2.1.2 terminating
 ถ้าไม่ได้ ให้ตรวจสอบว่าทั้งสอง terminal   รันอยู่ที่  IP Address  และ  Port  เดียวกันหรือไม่
 เพราะนี่คือจุดเริ่มต้นของการทำงานพื้นฐานที่ต้องรันได้อย่างถูกต้อง
 
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 47 09" src="https://github.com/user-attachments/assets/68fe3e6f-58f4-4379-8226-ff62f5242d34" />
+
 #### 2. การทดสอบไวลด์การ์ดระดับเดียว (Single-Level Wildcard: `+`)
 ใน **เทอร์มินัลที่ 2 (Subscriber)**  กด `Ctrl + C` เพื่อออกจากโปรแกรม subscriber แล้วเปลี่ยนคำสั่ง Subscribe เป็น
 ```powershell
@@ -192,6 +194,21 @@ mosquitto version 2.1.2 terminating
 ใน **เทอร์มินัลที่ 2 (Subscriber)** กด `Ctrl + C` เพื่อออกจากโปรแกรม subscriber แล้วเปลี่ยนคำสั่ง Subscribe เป็น
 ```powershell
 & mosquitto_sub.exe -h 127.0.0.1 -p 1883 -t "home/#" -v
+```
+
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 49 00" src="https://github.com/user-attachments/assets/5f71c09f-10fe-4d3d-a094-7ab9b19f0435" />
+
+```
+ข้อความที่ปรากฏในเทอร์มินัลที่ 2 (Subscriber)
+
+  home/livingroom/light ON
+  home/kitchen/light OFF
+
+ข้อความที่ไม่ปรากฏ
+  home/bedroom/balcony/light ON
+
+เหตุผล
+สัญลักษณ์ + แทนได้เพียง 1 ระดับของ Topic เท่านั้น ดังนั้น home/+/light จึงตรงกับ home/livingroom/light และ home/kitchen/light (ระดับกลางมี 1 ระดับ) แต่ home/bedroom/balcony/light มีระดับกลาง 2 ระดับ(bedroom/balcony) จึงไม่ตรงกับรูปแบบ Broker จึงไม่ส่งข้อความนี้ให้ Subscriber
 ```
 
 ใน **เทอร์มินัลที่ 3 (Publisher)** ทดลอง Publish ข้อความไปยังหัวข้อต่างๆ
