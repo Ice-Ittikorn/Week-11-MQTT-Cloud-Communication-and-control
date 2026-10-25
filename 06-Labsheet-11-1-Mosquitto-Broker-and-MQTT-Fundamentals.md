@@ -138,6 +138,9 @@ Opening ipv4 listen socket on port 1883.
 mosquitto version 2.0.18 running
 ```
 
+<img width="972" height="611" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 41 18" src="https://github.com/user-attachments/assets/398ce026-908e-40d6-8046-68acf438b6ff" />
+
+
 #### 5. หยุดการทำงานของ Mosquitto Broker
 ใน **เทอร์มินัลที่ 1 (Mosquitto Broker)**  ให้กด Ctrl+C เพื่อหยุดการทำงานของ Mosquitto Broker
 ในหน้าต่างแสดงผลของ Mosquitto Broker จะปรากฏ Log แสดงการปิดการเชื่อมต่อและหยุดการทำงานของ Broker
@@ -147,6 +150,8 @@ mosquitto version 2.0.18 running
 
 mosquitto version 2.1.2 terminating
 ```
+
+<img width="972" height="611" alt="ภาพถ่ายหน้าจอ 2569-10-25 เวลา 23 41 32" src="https://github.com/user-attachments/assets/dab7657e-eb56-48ec-b8de-b346a6b797df" />
 
 ---
 
