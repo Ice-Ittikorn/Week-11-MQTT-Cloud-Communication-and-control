@@ -216,9 +216,16 @@ idf.py -p COMx flash monitor
 * กดสวิตช์ Power บนหน้าจอแอป สังเกตว่าหลอดไฟ LED บนบอร์ดเปิดและปิดทันทีตามการสั่งการ
 * ทดลองเลื่อนแถบสไลเดอร์ Brightness สังเกตข้อความ Log บน Serial Monitor ว่าได้รับค่าความสว่างใหม่กี่เปอร์เซ็นต์
 
+<img width="438" height="740" alt="image" src="https://github.com/user-attachments/assets/0c11260e-31e5-4c6b-9d6c-fd0b7c018a3b" />
+<img width="454" height="559" alt="image" src="https://github.com/user-attachments/assets/aaec7b9f-9781-4e68-a997-ee1aca0ae0cb" />
+<img width="1512" height="982" alt="ภาพถ่ายหน้าจอ 2569-10-26 เวลา 01 53 47" src="https://github.com/user-attachments/assets/ded6001e-2e5a-4710-9859-f01ce684894e" />
+
+
 ### 2. การควบคุมระยะไกลข้ามอินเทอร์เน็ต (Remote 4G/5G Test)
 * **ปิดสัญญาณ Wi-Fi บนสมาร์ตโฟน** แล้วเปิดใช้งานเฉพาะ **สัญญาณอินเทอร์เน็ตมือถือ (4G/5G)**
 * กดสั่งเปิด-ปิดหลอดไฟอีกครั้ง สังเกตว่าบอร์ด ESP32 ที่บ้านยังคงตอบสนองต่อคำสั่งได้อย่างรวดเร็ว แสดงถึงพลังของสถาปัตยกรรม Cloud Control
+
+## ใช้งาน hotspot ในการทดลองจริงไม่ได้เปิด WIFI ตั้งเเต่เเรก
 
 ---
 
